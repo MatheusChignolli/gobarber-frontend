@@ -9,8 +9,14 @@ import Input from '../../components/Input';
 
 import { Container, Content, Background } from './styles';
 
+interface FormData {
+  email: string;
+  name: string;
+  password: string;
+}
+
 const SignUp: React.FC = () => {
-  function handleSubmit(data: object): void {
+  function handleSubmit(data: FormData): void {
     console.log(data);
   }
 
