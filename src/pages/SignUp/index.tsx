@@ -4,7 +4,7 @@ import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import { Link, useHistory } from 'react-router-dom';
-import getValidationError from '../../utils/getValidationErrors';
+import getValidationErrors from '../../utils/getValidationErrors';
 
 import api from '../../services/api';
 
@@ -62,7 +62,7 @@ const SignUp: React.FC = () => {
         history.push('/');
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
-          const errors = getValidationError(err);
+          const errors = getValidationErrors(err);
 
           formRef.current?.setErrors(errors);
 
